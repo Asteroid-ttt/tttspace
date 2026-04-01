@@ -1,0 +1,105 @@
+site_name: ttt 的笔记本
+site_description: tttspace 技术博客与学习笔记
+site_url: https://example.com/
+repo_name: Asteroid-ttt/ttt-note
+repo_url: https://github.com/Asteroid-ttt/ttt-note
+copyright: Copyright © 2024-2026 ttt<br>记录计算机基础、嵌入式与机器人方向的长期学习轨迹。
+
+theme:
+  name: material
+  language: zh
+  custom_dir: overrides
+  icon:
+    logo: material/notebook
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - toc.follow
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    - scheme: slate
+      primary: black
+      accent: cyan
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+  - tags
+  - git-revision-date-localized:
+      enable_creation_date: true
+      enable_git_follow: false
+      type: datetime
+      timezone: Asia/Shanghai
+      fallback_to_build_date: true
+
+hooks:
+  - hooks/main.py
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - tables
+  - attr_list
+  - md_in_html
+  - def_list
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: false
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - assets/javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - assets/javascripts/main.js
+
+extra_css:
+  - assets/stylesheets/base.css
+  - assets/stylesheets/layout.css
+  - assets/stylesheets/content.css
+  - assets/stylesheets/mobile.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Asteroid-ttt
+
+nav:
+  - 首页: index.md
+  - 计算机基础:
+    - computer-basics/index.md
+    - 计算机系统: computer-basics/computer-systems.md
+    - 计算机网络: computer-basics/computer-networks.md
+    - 操作系统: computer-basics/operating-systems.md
+  - 单片机:
+    - mcu/index.md
+    - 51 系列: mcu/mcs51.md
+    - stm32 系列: mcu/stm32.md
+    - FreeRTOS: mcu/freertos.md
+  - 嵌入式 Linux: embedded-linux/index.md
+  - 机器人: robotics/index.md
+  - AI: ai/index.md
+  - 项目记录: projects/index.md
+  - 随笔: essays/index.md

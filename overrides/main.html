@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block hero %}
+  {% if page and page.url == "index/" %}
+    <section class="ttt-hero">
+      <div class="ttt-hero-inner">
+        <p class="ttt-kicker">MkDocs + Material</p>
+        <h1>{{ config.site_name }}</h1>
+        <p>记录计算机基础、安全研究与 CTF 题解，保持长期积累。</p>
+      </div>
+    </section>
+  {% endif %}
+{% endblock %}
