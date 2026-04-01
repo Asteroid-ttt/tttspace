@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const pathname = window.location.pathname;
   const segments = pathname.split("/").filter(Boolean);
-  if (segments.length === 0 || (segments.length === 1 && segments[0] === "index.html")) {
+  const isHomeByPath = segments.length === 0 || (segments.length === 1 && segments[0] === "index.html");
+  const isHomeByContent = document.querySelector(".ttt-homepage") !== null;
+  if (isHomeByPath || isHomeByContent) {
     document.body.classList.add("ttt-home");
   }
 

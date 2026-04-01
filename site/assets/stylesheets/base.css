@@ -123,19 +123,40 @@ body.ttt-home .md-sidebar--secondary {
   display: none; /* 首页隐藏左右侧栏 */
 }
 
+/* 兼容 GitHub Pages 路径差异：直接依据首页模块结构隐藏侧栏 */
+body:has(.ttt-homepage) .md-sidebar--primary,
+body:has(.ttt-homepage) .md-sidebar--secondary {
+  display: none;
+}
+
 body.ttt-home .md-main__inner.md-grid {
   grid-template-columns: 1fr; /* 首页主栅格改为单列 */
   max-width: 1240px; /* 首页内容最大宽度 */
+}
+
+body:has(.ttt-homepage) .md-main__inner.md-grid {
+  grid-template-columns: 1fr;
+  max-width: 1240px;
 }
 
 body.ttt-home .md-content {
   max-width: 100%; /* 首页内容区占满可用宽度 */
 }
 
+body:has(.ttt-homepage) .md-content {
+  max-width: 100%;
+}
+
 body.ttt-home .ttt-stats,
 body.ttt-home .md-content .ttt-toc-wrap,
 body.ttt-home .md-content [data-md-component="toc"] {
   display: none !important; /* 首页额外隐藏统计和 TOC */
+}
+
+body:has(.ttt-homepage) .ttt-stats,
+body:has(.ttt-homepage) .md-content .ttt-toc-wrap,
+body:has(.ttt-homepage) .md-content [data-md-component="toc"] {
+  display: none !important;
 }
 
 
