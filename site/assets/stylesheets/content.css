@@ -1,0 +1,28 @@
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  letter-spacing: 0.01em; /* 标题字距 */
+  color: var(--ttt-text); /* 标题颜色 */
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 8px; /* 提示块圆角 */
+  border-color: var(--ttt-border); /* 提示块边框颜色 */
+}
+
+.md-typeset pre > code {
+  border-radius: 8px; /* 代码块圆角 */
+}
+
+.md-typeset .tabbed-set {
+  border: 1px solid var(--ttt-border); /* 标签页容器边框 */
+  border-radius: 8px; /* 标签页容器圆角 */
+  padding: 0.4rem; /* 标签页容器内边距 */
+  background: var(--ttt-surface); /* 标签页容器背景 */
+}
+
+.md-typeset p,
+.md-typeset li {
+  color: #c8d1de; /* 正文段落和列表文字颜色 */
+}

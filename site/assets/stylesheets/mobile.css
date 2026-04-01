@@ -1,0 +1,40 @@
+@media screen and (max-width: 76.1875em) {
+  .ttt-stats {
+    display: flex; /* 移动端统计条使用弹性布局 */
+    flex-wrap: wrap; /* 统计条内容允许换行 */
+    row-gap: 0.3rem; /* 换行后的行间距 */
+    border-radius: 12px; /* 移动端统计条圆角 */
+  }
+
+  .ttt-hero {
+    padding: 1rem; /* 移动端 Hero 内边距 */
+  }
+
+  .ttt-toc-wrap {
+    padding: 0.66rem; /* 移动端 TOC 卡片内边距 */
+  }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap,
+  .md-sidebar--secondary .md-sidebar__scrollwrap {
+    border-radius: 8px; /* 移动端侧栏圆角 */
+  }
+
+  .ttt-collapse-btn {
+    padding: 0.13rem 0.3rem; /* 移动端折叠按钮内边距 */
+  }
+
+  .ttt-homepage {
+    grid-template-columns: 1fr; /* 移动端首页改为单列 */
+    gap: 1.1rem; /* 移动端模块间距 */
+    min-height: auto; /* 移动端取消最小高度限制 */
+    padding-top: 1.3rem; /* 移动端顶部留白 */
+  }
+
+  .ttt-home-intro h1 {
+    font-size: clamp(1.75rem, 9vw, 2.8rem); /* 移动端首页主标题字号 */
+  }
+
+  .ttt-home-card {
+    width: 100%; /* 移动端卡片占满容器宽度 */
+  }
+}

@@ -1,0 +1,141 @@
+:root {
+  --ttt-bg: #0b0d10; /* 站点主背景色 */
+  --ttt-surface: #11151b; /* 卡片/面板基础底色 */
+  --ttt-surface-2: #171c24; /* 次级面板底色（按钮等） */
+  --ttt-text: #dde4ef; /* 主文本颜色 */
+  --ttt-text-muted: #95a2b4; /* 次级文本颜色 */
+  --ttt-accent: #5dc8ff; /* 强调色（高亮/重点） */
+  --ttt-border: #252d3a; /* 统一边框颜色 */
+}
+
+.ttt-announce {
+  display: flex; /* 使用弹性布局排列子元素 */
+  justify-content: space-between; /* 两端对齐 */
+  gap: 1rem; /* 子元素间距 */
+  font-size: 0.72rem; /* 公告栏字号 */
+  color: var(--ttt-text-muted); /* 公告栏文字颜色 */
+}
+
+body {
+  background: var(--ttt-bg); /* 页面全局背景 */
+  color: var(--ttt-text); /* 页面全局文字色 */
+}
+
+.md-main__inner {
+  margin-top: 0.4rem; /* 主内容区与顶部间距 */
+}
+
+.md-sidebar--primary,
+.md-sidebar--secondary {
+  padding-top: 0.55rem; /* 侧栏顶部内边距，保持呼吸感 */
+  align-self: start; /* 侧栏顶部对齐，不拉伸占满高度 */
+}
+
+.md-sidebar--secondary {
+  height: fit-content; /* 右侧栏高度按内容自适应 */
+}
+
+.md-sidebar--primary .md-sidebar__scrollwrap,
+.md-sidebar--secondary .md-sidebar__scrollwrap {
+  border: 1px solid var(--ttt-border); /* 侧栏外框 */
+  border-radius: 10px; /* 侧栏圆角 */
+  background: var(--ttt-surface); /* 侧栏背景色 */
+  max-height: none; /* 取消最大高度限制 */
+}
+
+/* Right sidebar should only show the TOC card itself, not a full-height frame */
+.md-sidebar--secondary .md-sidebar__scrollwrap {
+  border: none; /* 去掉右侧外层边框 */
+  background: transparent; /* 右侧外层背景透明 */
+  border-radius: 0; /* 右侧外层取消圆角 */
+}
+
+.md-sidebar--primary .md-nav {
+  padding-top: 0.38rem; /* 左侧导航内部顶部留白 */
+}
+
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item {
+  margin-top: 0.16rem; /* 左侧一级目录项之间的间距 */
+}
+
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link {
+  min-height: 1.68rem; /* 左侧一级目录最小行高 */
+  padding-top: 0.38rem; /* 左侧一级目录上内边距 */
+  padding-bottom: 0.28rem; /* 左侧一级目录下内边距 */
+  font-size: 0.84rem; /* 左侧一级目录字号（在这里改大/改小） */
+}
+
+.md-sidebar--primary .md-nav__item .md-nav__item {
+  margin-top: 0.02rem; /* 左侧二级及以下目录项间距 */
+}
+
+.md-sidebar--primary .md-nav__item .md-nav__item > .md-nav__link {
+  min-height: 1.32rem; /* 左侧二级及以下目录最小行高 */
+  padding-top: 0.12rem; /* 左侧二级及以下目录上内边距 */
+  padding-bottom: 0.12rem; /* 左侧二级及以下目录下内边距 */
+  font-size: 0.75rem; /* 左侧二级及以下目录字号（在这里改大/改小） */
+  opacity: 0.8; /* 次级目录轻微弱化 */
+}
+
+.md-sidebar--primary .md-nav__title,
+.md-sidebar--secondary .md-nav__title {
+  font-size: 0.85rem; /* 目录标题字号 */
+  letter-spacing: 0.06em; /* 目录标题字距 */
+  text-transform: uppercase; /* 目录标题转大写 */
+  color: var(--ttt-text-muted); /* 目录标题颜色 */
+}
+
+/* Unified compact spacing for secondary sidebar TOC */
+.md-sidebar--secondary .md-nav__title {
+  margin-bottom: 0.56rem; /* 右侧 TOC 标题与列表的间距 */
+}
+
+.md-sidebar--secondary .md-nav__item {
+  margin-top: 0.02rem; /* 右侧 TOC 项间距 */
+}
+
+.md-sidebar--secondary .md-nav__item > .md-nav__link {
+  min-height: 1.32rem; /* 右侧 TOC 项最小行高 */
+  padding-top: 0.52rem; /* 右侧 TOC 项上内边距 */
+  padding-bottom: 0.02rem; /* 右侧 TOC 项下内边距 */
+  font-size: 0.75rem; /* 右侧 TOC 目录字号（在这里改大/改小） */
+  opacity: 0.8; /* 右侧 TOC 项轻微弱化 */
+}
+
+/* Hide empty secondary sidebar */
+.md-sidebar--secondary:has(.md-nav__list:empty),
+.md-sidebar--secondary:not(:has(.md-nav__list)) {
+  display: none !important; /* 无目录时隐藏右侧侧栏 */
+}
+
+/* Keep article TOC only on the right sidebar */
+.md-sidebar--primary .ttt-toc-wrap,
+.md-sidebar--primary .md-nav--secondary {
+  display: none !important; /* 禁止左侧出现文章 TOC */
+}
+
+.ttt-nav-hidden {
+  display: none !important; /* 脚本控制时隐藏不需要的导航项 */
+}
+
+body.ttt-home .md-sidebar--primary,
+body.ttt-home .md-sidebar--secondary {
+  display: none; /* 首页隐藏左右侧栏 */
+}
+
+body.ttt-home .md-main__inner.md-grid {
+  grid-template-columns: 1fr; /* 首页主栅格改为单列 */
+  max-width: 1240px; /* 首页内容最大宽度 */
+}
+
+body.ttt-home .md-content {
+  max-width: 100%; /* 首页内容区占满可用宽度 */
+}
+
+body.ttt-home .ttt-stats,
+body.ttt-home .md-content .ttt-toc-wrap,
+body.ttt-home .md-content [data-md-component="toc"] {
+  display: none !important; /* 首页额外隐藏统计和 TOC */
+}
+
+

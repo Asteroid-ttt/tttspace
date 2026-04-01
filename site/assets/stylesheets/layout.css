@@ -1,0 +1,138 @@
+.ttt-hero {
+  margin: 0.5rem 0 1rem; /* Hero 外边距：上/左右/下 */
+  padding: 1rem 1.1rem; /* Hero 内边距：上下/左右 */
+  border: 1px solid var(--ttt-border); /* Hero 边框 */
+  border-radius: 10px; /* Hero 圆角 */
+  background: var(--ttt-surface); /* Hero 背景色 */
+}
+
+.ttt-kicker {
+  margin: 0; /* Kicker 段落外边距归零 */
+  letter-spacing: 0.08em; /* Kicker 字距 */
+  text-transform: uppercase; /* Kicker 转大写 */
+  color: var(--ttt-accent); /* Kicker 颜色 */
+  font-weight: 700; /* Kicker 字重 */
+}
+
+.ttt-article {
+  padding: 0.2rem 0 1.4rem; /* 文章容器内边距：上/左右/下 */
+}
+
+.ttt-stats {
+  display: inline-flex; /* 统计条使用行内弹性布局 */
+  gap: 1rem; /* 统计项间距 */
+  margin: 0.2rem 0 0.8rem; /* 统计条外边距 */
+  padding: 0.32rem 0.62rem; /* 统计条内边距 */
+  border: 1px solid var(--ttt-border); /* 统计条边框 */
+  border-radius: 999px; /* 胶囊圆角 */
+  font-size: 0.78rem; /* 统计条字号 */
+  color: var(--ttt-text-muted); /* 统计条文字色 */
+}
+
+.ttt-toc-wrap {
+  padding: 0.8rem 0.7rem; /* TOC 卡片内边距 */
+  border: 1px solid var(--ttt-border); /* TOC 卡片边框 */
+  border-radius: 10px; /* TOC 卡片圆角 */
+  background: var(--ttt-surface); /* TOC 卡片背景色 */
+}
+
+.ttt-toc-title {
+  margin-bottom: 0.5rem; /* TOC 标题下边距 */
+  font-size: 0.78rem; /* TOC 标题字号 */
+  font-weight: 700; /* TOC 标题字重 */
+  letter-spacing: 0.08em; /* TOC 标题字距 */
+  text-transform: uppercase; /* TOC 标题转大写 */
+  color: var(--ttt-accent); /* TOC 标题颜色 */
+}
+
+.ttt-homepage {
+  min-height: calc(100vh - 11rem); /* 首页最小高度（减去头尾区域） */
+  display: grid; /* 首页使用网格布局 */
+  grid-template-columns: 1.1fr 0.9fr; /* 首页左右列宽比 */
+  gap: 2.4rem; /* 两列间距 */
+  align-items: center; /* 网格项垂直居中 */
+  padding: 2.4rem 0.4rem 1.6rem; /* 首页区块内边距 */
+}
+
+.ttt-home-intro h1 {
+  margin: 0; /* 首页主标题外边距归零 */
+  font-size: clamp(2.2rem, 5.5vw, 4.6rem); /* 首页主标题响应式字号 */
+  line-height: 1.08; /* 首页主标题行高 */
+  letter-spacing: 0.01em; /* 首页主标题字距 */
+}
+
+.ttt-home-intro p {
+  margin: 1rem 0 0; /* 首页介绍段落外边距 */
+  color: var(--ttt-text-muted); /* 首页介绍段落文字色 */
+  font-size: 1rem; /* 首页介绍段落字号 */
+}
+
+.ttt-home-links {
+  margin-top: 1.35rem; /* 首页快捷链接区上边距 */
+  display: flex; /* 首页快捷链接使用弹性布局 */
+  flex-wrap: wrap; /* 快捷链接允许换行 */
+  gap: 0.7rem; /* 快捷链接间距 */
+}
+
+.ttt-home-links a {
+  display: inline-flex; /* 链接按钮使用行内弹性布局 */
+  align-items: center; /* 链接按钮内容垂直居中 */
+  gap: 0.3rem; /* 链接按钮内部元素间距 */
+  padding: 0.44rem 0.68rem; /* 链接按钮内边距 */
+  border-radius: 999px; /* 链接按钮胶囊圆角 */
+  border: 1px solid var(--ttt-border); /* 链接按钮边框 */
+  color: #c7d6ea; /* 链接按钮文字色 */
+  text-decoration: none; /* 取消下划线 */
+  font-size: 0.82rem; /* 链接按钮字号 */
+}
+
+.ttt-home-links a:hover {
+  border-color: #3a4a63; /* 悬停时边框高亮 */
+  color: #eff6ff; /* 悬停时文字提亮 */
+}
+
+.ttt-home-card {
+  justify-self: center; /* 卡片在网格中水平居中 */
+  width: min(360px, 86vw); /* 卡片宽度（桌面上限+移动端自适应） */
+  border-radius: 18px; /* 卡片圆角 */
+  border: 1px solid #283348; /* 卡片边框 */
+  background: linear-gradient(180deg, #111621 0%, #0c1119 100%); /* 卡片渐变背景 */
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.45); /* 卡片阴影 */
+  overflow: hidden; /* 溢出内容裁切 */
+}
+
+.ttt-home-card-header {
+  padding: 1rem 1rem 0.7rem; /* 卡片头部内边距 */
+  border-bottom: 1px solid #1f2734; /* 卡片头部分割线 */
+}
+
+.ttt-home-card-header small {
+  color: #8a98ab; /* 小标题文字色 */
+  text-transform: uppercase; /* 小标题转大写 */
+  letter-spacing: 0.08em; /* 小标题字距 */
+}
+
+.ttt-home-card-header h2 {
+  margin: 0.45rem 0 0; /* 卡片主标题外边距 */
+  font-size: 1.34rem; /* 卡片主标题字号 */
+}
+
+.ttt-home-card-body {
+  padding: 1rem; /* 卡片正文内边距 */
+}
+
+.ttt-home-card-body ul {
+  margin: 0; /* 列表外边距归零 */
+  padding-left: 1rem; /* 列表左内边距（项目符号缩进） */
+  color: #b7c4d7; /* 列表文字颜色 */
+}
+
+.ttt-home-card-body li + li {
+  margin-top: 0.42rem; /* 相邻列表项垂直间距 */
+}
+
+.ttt-home-foot {
+  margin-top: 1rem; /* 页脚文案上边距 */
+  font-size: 0.78rem; /* 页脚文案字号 */
+  color: #8ea0b8; /* 页脚文案颜色 */
+}
