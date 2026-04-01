@@ -1,7 +1,7 @@
 <section class="ttt-homepage">
     <div class="ttt-home-intro">
         <h1>ttt 的笔记本</h1>
-        <p>长期记录计算机基础、单片机、嵌入式 Linux、机器人与 AI。</p>
+        <p>长期记录计算机基础、单片机、嵌入式 Linux、机器人与 AI 学习。</p>
         <div class="ttt-home-links">
             <a href="computer-basics/">计算机基础</a>
             <a href="mcu/">单片机</a>

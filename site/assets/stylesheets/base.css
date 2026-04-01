@@ -35,12 +35,21 @@ body {
   height: fit-content; /* 右侧栏高度按内容自适应 */
 }
 
+.md-sidebar--primary {
+  height: fit-content; /* 左侧栏高度按内容自适应 */
+  width: clamp(12rem, 18vw, 16rem); /* 左侧栏宽度在合理范围内自适应 */
+}
+
 .md-sidebar--primary .md-sidebar__scrollwrap,
 .md-sidebar--secondary .md-sidebar__scrollwrap {
   border: 1px solid var(--ttt-border); /* 侧栏外框 */
   border-radius: 10px; /* 侧栏圆角 */
   background: var(--ttt-surface); /* 侧栏背景色 */
   max-height: none; /* 取消最大高度限制 */
+}
+
+.md-sidebar--primary .md-sidebar__scrollwrap {
+  height: fit-content; /* 左侧目录容器按内容高度收缩 */
 }
 
 /* Right sidebar should only show the TOC card itself, not a full-height frame */
